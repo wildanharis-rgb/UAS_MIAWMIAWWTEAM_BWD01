@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+   <title>| Sate Taichan Kang Mus</title>
+  <link rel="icon" type="Logo Sate Taichan Kang Mus" href="Logo.jpg">
+  <link rel="stylesheet" href="CSS.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container">
+      <a href="Home.html" class="logo">
+        <img src="./Logo.jpg" alt="Sate Taichan Logo">
+      </a>
+      <nav>
+        <a href="Home.html">Beranda</a>
+        <a href="Product.html" class="active">Produk</a>
+        <a href="Contact.html">Kontak</a>
+        <a href="Cart.html" class="cart-link">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7.75 7.75H19.25L17.6128 14.7081C17.4002 15.6115 16.5941 16.25 15.666 16.25H11.5395C10.632 16.25 9.83827 15.639 9.60606 14.7618L7.75 7.75ZM7.75 7.75L7 4.75H4.75"/>
+            <circle cx="10" cy="19" r="1" fill="currentColor"/>
+            <circle cx="17" cy="19" r="1" fill="currentColor"/>
+          </svg>
+          <span class="cart-count">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PRODUK -->
+  <section class="catalog">
+    <div class="filters">
+      <button class="chip" onclick="showAll()">Semua</button>
+      <button class="chip" onclick="filterCategory('makanan')">Makanan</button>
+      <button class="chip" onclick="filterCategory('minuman')">Minuman</button>
+      <button class="chip" onclick="filterCategory('tambahan')">Tambahan</button>
+      <button class="chip" onclick="showPromo()">Promo</button>
+      <input class="search" type="search" placeholder="Search bar">
+    </div>
+
+    <div class="grid">
+      <div class="products" id="product-list">
+    
+        <div class="card makanan">
+          <img class="thumb" src="Taichan_Ori.jpg" alt="Sate Taichan Original">
+          <div class="title">Sate Taichan Original</div>
+          <div class="desc">Sate ayam tanpa bumbu kacang dengan sambal pedas dan jeruk nipis. Daging ayam pilihan yang empuk dan juicy.</div>
+          <div class="price">Rp 15.000</div>
+          <a class="add" href="Detail.html?product=sate-original">Pesan</a>
+        </div>
+
+        <div class="card makanan">
+          <img class="thumb" src="Taichan_Dada.jpg" alt="Sate Taichan Dada">
+          <div class="title">Sate Taichan Dada</div>
+          <div class="desc">Sate taichan menggunakan daging dada ayam pilihan. Rendah lemak dan tetap juicy!</div>
+          <div class="price">Rp 18.000</div>
+          <a class="add" href="Detail.html?product=sate-dada">Pesan</a>
+        </div>
+
+        <div class="card makanan">
+          <img class="thumb" src="Taichan_Krispi.jpg" alt="Sate Taichan Krispi">
+          <div class="title">Sate Taichan Krispi</div>
+          <div class="desc">Inovasi terbaru! Sate taichan dengan lapisan tepung krispi spesial.</div>
+          <div class="price">Rp 20.000</div>
+          <a class="add" href="Detail.html?product=sate-krispi">Pesan</a>
+        </div>
+
+        <div class="card makanan">
+          <img class="thumb" src="Taichan_Kulit.jpg" alt="Sate Taichan Kulit">
+          <div class="title">Sate Taichan Kulit</div>
+          <div class="desc">Untuk pecinta kulit ayam! Dibakar sampai garing tapi tetap juicy.</div>
+          <div class="price">Rp 16.000</div>
+          <a class="add" href="Detail.html?product=sate-kulit">Pesan</a>
+        </div>
+
+        <div class="card makanan">
+          <img class="thumb" src="Taichan_Telor.jpg" alt="Sate Taichan Telur Puyuh">
+          <div class="title">Sate Taichan Telur Puyuh</div>
+          <div class="desc">Kombinasi unik sate taichan dengan telur puyuh. Tambahan protein yang lezat!</div>
+          <div class="price">Rp 18.000</div>
+          <a class="add" href="Detail.html?product=sate-telur">Pesan</a>
+        </div>
+
+        <!-- Tambahan -->
+        <div class="card minuman">
+          <img class="thumb" src="./Es_Jeruk.jpg" alt="Es Jeruk">
+          <div class="title">Es Jeruk</div>
+          <div class="desc">Es Jeruk segar Cocok untuk teman makan sate.</div>
+          <div class="price">Rp 5.000</div>
+          <a class="add" href="Detail.html?product=jeruk">Pesan</a>
+        </div>
+
+        <div class="card tambahan">
+          <img class="thumb" src="Lontong_Kukus.jpg" alt="Lontong">
+          <div class="title">Lontong</div>
+          <div class="desc">Lontong kukus hangat. Alternatif nasi yang lembut dan nikmat.</div>
+          <div class="price">Rp 3.000</div>
+          <a class="add" href="Detail.html?product=lontong">Pesan</a>
+        </div>
+
+        <div class="card tambahan promo">
+          <img class="thumb" src="Sambal_Bawang.jpg" alt="Sambal Bawang">
+          <div class="title">Sambal Bawang</div>
+          <div class="desc">Sambal bawang spesial racikan Kang Mus. Pedasnya nampol!</div>
+          <div class="price"><span class="old-price">Rp 5.000</span> Rp 3.000</div>
+          <a class="add" href="Detail.html?product=sambal">Pesan</a>
+        </div>
+      </div>
+    </div>
+      <div class="no-promo" id="no-promo" style="display:none;">Yah, hari ini nggak ada promo 😅</div>
+    </div>
+  </section>
+
+ <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="Home.html" class="logo">
+            <img src="./Logo.jpg" 
+                 alt="Sate Taichan Logo">
+            Sate Taichan<br>Kang Mus
+          </a>
+          <p>Nikmati kelezatan sate taichan premium dengan sambal pedas khas yang akan memanjakan lidah Anda. Dibuat dengan bahan berkualitas dan dimasak oleh chef berpengalaman.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/taichankangmus?igsh=enUwMXpwZXlkamRm" class="social-link" aria-label="Instagram">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h3>Menu Utama</h3>
+          <ul class="footer-list">
+            <li>
+              <a href="Home.html">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 12l2-2m0 0l7-7 7 7M5 10v4h14v-4"/>
+                </svg>
+                Beranda
+              </a>
+            </li>
+            <li>
+              <a href="Product.html">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 6h16M4 12h16m-7 6h7"/>
+                </svg>
+                Menu & Produk
+              </a>
+            </li>
+            <li>
+              <a href="Cart.html">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 7h14l-1 9H6l-1-9zm0 0L4 4H2"/>
+                </svg>
+                Keranjang
+              </a>
+            </li>
+            <li>
+              <a href="Contact.html">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                Kontak
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact">
+          <h3>Hubungi Kami</h3>
+          <address>
+            <div class="contact-item">
+              <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              <a href="tel:+6289504508886">+62 89-504-508-886</a>
+            </div>
+            <div class="contact-item">
+              <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <a href="mailto:info@satetaichankangmus.com">info@satetaichankangmus.com</a>
+            </div>
+            <div class="contact-item">
+              <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              Jalan Jawa Ruko Java Square, Jember<br>
+            </div>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Miaw Meow Team — Nabhan, Wildan, Sharon, Sachiko, Nayla Affiyah.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+     // Ambil elemen search bar dan semua produk
+  const searchInput = document.querySelector('.search');
+  const productCards = document.querySelectorAll('.card');
+
+  // Tambahkan event listener supaya jalan setiap kali user mengetik
+  searchInput.addEventListener('keyup', function (e) {
+    const keyword = e.target.value.toLowerCase(); // teks pencarian
+    let foundAny = false; // buat cek apakah ada hasil cocok
+
+    productCards.forEach(card => {
+      const productName = card.querySelector('.title').textContent.toLowerCase();
+
+      // Jika nama produk mengandung keyword pencarian → tampilkan
+      if (productName.includes(keyword)) {
+        card.style.display = 'block';
+        foundAny = true;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Tampilkan atau sembunyikan teks "tidak ada hasil"
+    const noPromo = document.getElementById('no-promo');
+    if (keyword !== '' && !foundAny) {
+      noPromo.style.display = 'block';
+      noPromo.textContent = 'Produk tidak ditemukan 😢';
+    } else {
+      noPromo.style.display = 'none';
+    }
+  });
+
+    function showPromo() {
+      const products = document.querySelectorAll('.card');
+      const noPromoMsg = document.getElementById('no-promo');
+      let found = false;
+      products.forEach(card => {
+        if (card.classList.contains('promo')) {
+          card.style.display = 'block';
+          found = true;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      noPromoMsg.style.display = found ? 'none' : 'block';
+    }
+
+    function filterCategory(cat) {
+      const products = document.querySelectorAll('.card');
+      document.getElementById('no-promo').style.display = 'none';
+      products.forEach(card => {
+        card.style.display = card.classList.contains(cat) ? 'block' : 'none';
+      });
+    }
+
+    function showAll() {
+      const products = document.querySelectorAll('.card');
+      document.getElementById('no-promo').style.display = 'none';
+      products.forEach(card => card.style.display = 'block');
+    }
+  
+    // Update cart count
+    function updateCartCount() {
+      const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartCount = document.querySelector('.cart-count');
+      if (cartCount) {
+        cartCount.textContent = cartItems.length;
+      }
+    }
+
+    // Initialize cart count
+    document.addEventListener('DOMContentLoaded', updateCartCount);
+
+    // Update cart count when items are added/removed
+    window.addEventListener('storage', function(e) {
+      if (e.key === 'cart') {
+        updateCartCount();
+      }
+    });
+  </script>
+</body>
+</html>

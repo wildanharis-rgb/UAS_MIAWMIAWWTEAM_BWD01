@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>| Sate Taichan Kang Mus</title>
+  <link rel="icon" type="Logo Sate Taichan Kang Mus" href="Logo.jpg">
+  <link rel="stylesheet" href="CSS.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container">
+      <a href="home.html" class="logo">
+        <img src="./Logo.jpg" alt="Sate Taichan Logo">
+      </a>
+      <nav>
+        <a href="Home.html" class="active">Beranda</a>
+        <a href="Product.html">Produk</a>
+        <a href="Contact.html">Kontak</a>
+        <a href="Cart.html" class="cart-link">
+          <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M7.75 7.75H19.25L17.6128 14.7081C17.4002 15.6115 16.5941 16.25 15.666 16.25H11.5395C10.632 16.25 9.83827 15.639 9.60606 14.7618L7.75 7.75ZM7.75 7.75L7 4.75H4.75" />
+            <circle cx="10" cy="19" r="1" fill="currentColor" />
+            <circle cx="17" cy="19" r="1" fill="currentColor" />
+          </svg>
+          <span class="cart-count">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- KERANJANG -->
+  <section class="cart-page">
+    <div class="container">
+      <div class="cart-header">
+        <h1>Keranjang Belanja</h1>
+        <p class="cart-subtitle">Review pesanan Anda sebelum checkout</p>
+      </div>
+
+      <div class="cart-container" id="cart-container">
+        <div class="cart-content">
+          <!-- Daftar Item -->
+          <div class="cart-list" id="cart-items">
+            <!-- Items will be inserted here by JavaScript -->
+          </div>
+
+          <!-- Ringkasan Order -->
+          <div class="cart-summary" id="cart-summary">
+            <div class="summary-header">
+              <h3>Ringkasan Pesanan</h3>
+            </div>
+            <div class="summary-details">
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="subtotal">Rp 0</span>
+              </div>
+              <div class="summary-row">
+                <span>Jumlah Item</span>
+                <span id="item-count">0 item</span>
+              </div>
+              <div class="summary-total">
+                <span>Total</span>
+                <span id="total-price">Rp 0</span>
+              </div>
+            </div>
+            <div class="summary-actions">
+              <button class="checkout-btn" onclick="orderViaWhatsApp()">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                </svg>
+                Pesan via WhatsApp
+              </button>
+              <a href="https://gofood.co.id" target="_blank" class="checkout-btn gofood">
+                <img src="./logog.png" alt="GoFood" width="20" height="20">
+                Pesan di GoFood
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Keranjang Kosong -->
+        <div id="empty-cart" class="empty-cart" style="display:none">
+          <img
+            src="https://img.icons8.com/external-vitaliy-gorbachev-flat-vitaly-gorbachev/58/c97a33/external-satay-vacation-vitaliy-gorbachev-flat-vitaly-gorbachev.png"
+            alt="Empty Cart" width="120">
+          <h2>Keranjang Anda Kosong</h2>
+          <p>Yuk, pilih menu favoritmu!</p>
+          <a href="Product.html" class="browse-btn">Lihat Menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="Home.html" class="logo">
+            <img src="./Logo.jpg" 
+                 alt="Sate Taichan Logo">
+            Sate Taichan<br>Kang Mus
+          </a>
+          <p>Nikmati kelezatan sate taichan premium dengan sambal pedas khas yang akan memanjakan lidah Anda. Dibuat dengan bahan berkualitas dan dimasak oleh chef berpengalaman.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/taichankangmus?igsh=enUwMXpwZXlkamRm" class="social-link" aria-label="Instagram">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h3>Menu Utama</h3>
+          <ul class="footer-list">
+            <li>
+              <a href="Home.html">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 12l2-2m0 0l7-7 7 7M5 10v4h14v-4"/>
+                </svg>
+                Beranda
+              </a>
+            </li>
+            <li>
+              <a href="Product.html">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 6h16M4 12h16m-7 6h7"/>
+                </svg>
+                Menu & Produk
+              </a>
+            </li>
+            <li>
+              <a href="Cart.html">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 7h14l-1 9H6l-1-9zm0 0L4 4H2"/>
+                </svg>
+                Keranjang
+              </a>
+            </li>
+            <li>
+              <a href="Contact.html">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                Kontak
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact">
+          <h3>Hubungi Kami</h3>
+          <address>
+            <div class="contact-item">
+              <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              <a href="tel:+6289504508886">+62 89-504-508-886</a>
+            </div>
+            <div class="contact-item">
+              <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <a href="mailto:info@satetaichankangmus.com">info@satetaichankangmus.com</a>
+            </div>
+            <div class="contact-item">
+              <svg width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              Jalan Jawa Ruko Java Square, Jember<br>
+            </div>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Miaw Meow Team — Nabhan, Wildan, Sharon, Sachiko, Nayla Affiyah.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function formatPrice(price) {
+      return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+      }).format(price);
+    }
+
+    // Update cart display
+    function updateCart() {
+      const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartList = document.getElementById('cart-items');
+      const emptyCart = document.getElementById('empty-cart');
+      const cartContent = document.querySelector('.cart-content');
+
+      if (cartItems.length === 0) {
+        emptyCart.style.display = 'block';
+        cartContent.style.display = 'none';
+        return;
+      }
+
+      emptyCart.style.display = 'none';
+      cartContent.style.display = 'grid';
+
+      // Group items by name and count quantities
+      const grouped = cartItems.reduce((acc, item) => {
+        if (!acc[item.name]) {
+          acc[item.name] = { ...item, quantity: 0 };
+        }
+        acc[item.name].quantity++;
+        return acc;
+      }, {});
+
+      // Generate HTML for cart items
+      // Generate HTML for cart items
+      cartList.innerHTML = Object.values(grouped).map(item => `
+        <div class="cart-item" data-id="${item.id}">
+          <img src="${item.image}" alt="${item.name}">
+          <div class="cart-info">
+            <h3>${item.name}</h3>
+            <p>${formatPrice(item.price)} × ${item.quantity}</p>
+            <p>Subtotal: ${formatPrice(item.price * item.quantity)}</p>
+          </div>
+          <button class="remove-btn" onclick="removeFromCart('${item.id}')">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 7.75L7.59115 17.4233C7.68102 18.4568 8.54622 19.25 9.58363 19.25H14.4164C15.4538 19.25 16.319 18.4568 16.4088 17.4233L17.25 7.75"/>
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 7.5V6.75C9.75 5.64543 10.6454 4.75 11.75 4.75H12.25C13.3546 4.75 14.25 5.64543 14.25 6.75V7.5"/>
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 7.75H19"/>
+            </svg>
+          </button>
+        </div>
+      `).join('');
+
+      // Update summary
+      const total = cartItems.reduce((sum, item) => sum + item.price, 0);
+      document.getElementById('subtotal').textContent = formatPrice(total);
+      document.getElementById('total-price').textContent = formatPrice(total);
+      document.getElementById('item-count').textContent = `${cartItems.length} item`;
+    }
+
+    function removeItem(name) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      // Remove one instance of the item
+      const index = cart.findIndex(item => item.name === name);
+      if (index > -1) {
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCart();
+      }
+    }
+
+    function orderViaWhatsApp() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      if (cart.length === 0) return;
+
+      // Group items by name and count quantities
+      const grouped = cart.reduce((acc, item) => {
+        if (!acc[item.name]) {
+          acc[item.name] = { ...item, quantity: 0 };
+        }
+        acc[item.name].quantity++;
+        return acc;
+      }, {});
+
+      // Generate order message
+      const orderDetails = Object.values(grouped)
+        .map(item => `${item.name} (${item.quantity}x)`)
+        .join('\n');
+
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+      const message = `Halo, saya ingin memesan:%0A${orderDetails}%0A%0ATotal: Rp ${formatPrice(total)}`;
+
+      window.open(`https://wa.me/6289504508886?text=${message}`, '_blank');
+    }
+
+    // Load cart when page loads
+    document.addEventListener('DOMContentLoaded', updateCart);
+  </script>
+</body>
+
+</html>
