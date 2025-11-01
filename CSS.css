@@ -131,75 +131,94 @@ nav a.active::after {
   transform: translateY(-1px);
 }
 
-/* HERO */
+  /* ==== HERO SECTION ==== */
 .hero {
-  background: linear-gradient(to right, #fff9f5, #fff);
-  padding: 80px 0;
-  margin-bottom: 64px;
-  border-bottom: 1px solid var(--border);
+  padding: 4rem 1rem;
+  background: #fffaf5;
 }
 
 .hero .container {
-  display: grid;
-  grid-template-columns: 1fr 500px;
-  gap: 64px;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .hero h1 {
-  font-size: 56px;
+  font-size: 3rem;
+  color: #b96e2b;
   line-height: 1.2;
-  margin: 0;
-  background: linear-gradient(to right, var(--accent), var(--accent-dark));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .hero h2 {
-  font-size: 32px;
-  color: var(--muted);
-  margin: 16px 0;
-  font-weight: 500;
+  font-size: 1.6rem;
+  color: #666;
+  margin-top: 0.5rem;
 }
 
 .hero p {
-  color: var(--muted);
-  font-size: 18px;
-  margin: 24px 0 32px;
-  line-height: 1.6;
+  font-size: 1rem;
+  color: #555;
+  margin: 1rem 0 2rem;
+  max-width: 480px;
 }
 
 .hero .btn {
-  background: var(--accent);
-  color: #fff;
-  padding: 14px 32px;
-  border-radius: var(--radius);
-  text-decoration: none;
-  font-weight: 600;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  transition: all 0.2s ease;
+  gap: 0.5rem;
+  background-color: #b96e2b;
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
 .hero .btn:hover {
-  background: var(--accent-dark);
-  transform: translateY(-2px);
-}
-
-.hero .visual {
-  background: #fff;
-  height: 400px;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  position: relative;
+  background-color: #a35f21;
 }
 
 .hero .visual img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+@media (max-width: 768px) {
+  .hero .container {
+    flex-direction: column; /* teks & gambar susun ke bawah */
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    max-width: 90%;
+  }
+
+  .hero .visual img {
+    width: 85%;
+    max-width: 350px;
+  }
+
+  .hero .btn {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.2rem;
+  }
 }
 
 /* === ULASAN PELANGGAN === */
