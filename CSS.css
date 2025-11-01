@@ -131,6 +131,7 @@ nav a.active::after {
   transform: translateY(-1px);
 }
 
+
   /* ==== HERO SECTION ==== */
 .hero {
   padding: 4rem 1rem;
